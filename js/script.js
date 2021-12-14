@@ -16,22 +16,13 @@ function generateRanNumArray(maxNum)
 
 const Obj_1 = generateRanNumArray(20);
 
-function filterArray(min, max, num)
-{
-    if(num > min && num < max)
-    {
-        return num;
-    }
-    else
-    {
-        return null
-    }
-}
+let numFiltred = arrayFiltred(3, 7, Obj_1);
 
-let numFiltred = Obj_1.filter((element) => {
-    let ObjEl = filterArray(10, 20, element);
-    if(ObjEl != null)
-        return ObjEl;
-});
+function arrayFiltred(min, max, array) {
+    let numFiltred = array.filter((element, index) => {
+        return index >= min && index <= max;
+    });
+    return numFiltred;
+}
 
 console.log(numFiltred);
